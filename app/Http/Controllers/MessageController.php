@@ -18,7 +18,7 @@ class MessageController extends Controller
         $result = Gemini::geminiPro()->generateContent([$prompt]);
 
         $twilio = new Client(config('twilio.account_sid'), config('twilio.auth_token'));
-        $twilio->messages->create('whatsapp:+5516993068508',
+        $twilio->messages->create('whatsapp:+55000000000',
             [
               'from' => "whatsapp:" . config('twilio.phone_number'),
               'body' => $result->text()
